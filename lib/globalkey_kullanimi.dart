@@ -14,10 +14,26 @@ class GlobalKeyKullanimi extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Butona Basilma Miktari :'),
-            Text('0'),
+            SayacWidget(),
           ],
         ),
       ),
     );
+  }
+}
+
+class SayacWidget extends StatefulWidget {
+  const SayacWidget({super.key});
+
+  @override
+  State<SayacWidget> createState() => _SayacWidgetState();
+}
+
+class _SayacWidgetState extends State<SayacWidget> {
+  int _sayac = 0;
+  
+  @override
+  Widget build(BuildContext context) {
+    return Text(_sayac.toString(), style: Theme.of(context).textTheme.headlineSmall,);
   }
 }
